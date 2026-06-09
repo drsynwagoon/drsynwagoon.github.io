@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdulbasit Balogun, Web3 Community Lead</title>
+<meta name="description" content="Web3 community lead who builds trading communities from zero to tens of thousands. Discord, growth, automation, and on-chain engagement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0E1A;
+    --surface:#111726;
+    --surface-2:#161E32;
+    --line:#22304A;
+    --line-soft:#1A2236;
+    --text:#E9EDF6;
+    --muted:#8693AC;
+    --muted-2:#5E6B85;
+    --gold:#F5C451;
+    --teal:#4FD1C5;
+    --display:'Space Grotesk',-apple-system,sans-serif;
+    --body:'Inter',-apple-system,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',monospace;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--gold);color:#0A0E1A}
+  :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:2px}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--teal);display:inline-flex;align-items:center;gap:9px;
+  }
+  .eyebrow::before{content:"//";color:var(--muted-2)}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(10,14,26,.78);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .brand{font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:.04em}
+  .brand .dot{color:var(--teal)}
+  .nav-links{display:flex;gap:30px;font-size:14px;color:var(--muted)}
+  .nav-links a{transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{font-family:var(--mono);font-size:13px;color:var(--gold);border:1px solid var(--line);padding:8px 15px;border-radius:7px;transition:all .2s}
+  .nav-cta:hover{border-color:var(--gold);background:rgba(245,196,81,.07)}
+
+  /* HERO */
+  .hero{position:relative;padding:88px 0 56px;overflow:hidden}
+  .hero-grid{
+    position:absolute;inset:0;z-index:0;pointer-events:none;
+    background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
+    background-size:54px 54px;
+    -webkit-mask-image:radial-gradient(ellipse 80% 60% at 70% 0%,#000 0%,transparent 75%);
+    mask-image:radial-gradient(ellipse 80% 60% at 70% 0%,#000 0%,transparent 75%);
+    opacity:.5;
+  }
+  .hero-glow{
+    position:absolute;top:-160px;right:-120px;width:560px;height:560px;z-index:0;pointer-events:none;
+    background:radial-gradient(circle,rgba(79,209,197,.16),transparent 62%);filter:blur(8px);
+  }
+  .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+  .hero h1{
+    font-family:var(--display);font-weight:600;line-height:1.04;letter-spacing:-.02em;
+    font-size:clamp(38px,5.2vw,62px);margin:20px 0 22px;
+  }
+  .hero h1 .hl{color:var(--gold)}
+  .hero p.lede{font-size:18px;color:var(--muted);max-width:30em}
+  .hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:14px;padding:13px 22px;border-radius:9px;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+  .btn-primary{background:var(--gold);color:#0A0E1A;font-weight:700}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px -8px rgba(245,196,81,.5)}
+  .btn-ghost{border:1px solid var(--line);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+
+  /* SIGNATURE: position sheet */
+  .sheet{
+    background:linear-gradient(180deg,var(--surface),var(--surface-2));
+    border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    box-shadow:0 28px 60px -28px rgba(0,0,0,.7);
+  }
+  .sheet-head{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.015)}
+  .sheet-title{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .live{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--teal);text-transform:uppercase}
+  .live .pulse{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(79,209,197,.6);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(79,209,197,.5)}70%{box-shadow:0 0 0 8px rgba(79,209,197,0)}100%{box-shadow:0 0 0 0 rgba(79,209,197,0)}}
+  .sheet-row{display:flex;align-items:baseline;justify-content:space-between;padding:15px 18px;border-bottom:1px solid var(--line-soft)}
+  .sheet-row:last-child{border-bottom:none}
+  .sheet-row .k{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .sheet-row .v{font-family:var(--mono);font-weight:700;font-size:24px;color:var(--text);font-variant-numeric:tabular-nums}
+  .sheet-row .v small{font-size:14px;color:var(--gold);font-weight:500;margin-left:1px}
+  .sheet-foot{padding:11px 18px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--muted-2);text-align:right}
+
+  /* SECTION shell */
+  section.block{padding:78px 0;border-top:1px solid var(--line-soft)}
+  .sec-head{margin-bottom:40px}
+  .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(26px,3.2vw,36px);letter-spacing:-.01em;margin-top:14px}
+  .sec-head p{color:var(--muted);max-width:46em;margin-top:12px;font-size:16px}
+
+  /* ABOUT */
+  .about-body{font-size:18px;color:#C7CFE0;max-width:54em;line-height:1.75}
+  .about-body strong{color:var(--text);font-weight:600}
+
+  /* EXPERIENCE */
+  .role{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px 26px 22px;margin-bottom:18px;
+    transition:border-color .25s,transform .25s;
+  }
+  .role:hover{border-color:var(--line);transform:translateY(-2px)}
+  .role-top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap}
+  .role-title{font-family:var(--display);font-weight:600;font-size:21px}
+  .role-title .org{color:var(--gold)}
+  .role-meta{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap;text-align:right}
+  .role-ctx{font-size:13.5px;color:var(--muted);margin:7px 0 16px;font-family:var(--mono)}
+  .role ul{list-style:none;display:grid;gap:9px}
+  .role li{position:relative;padding-left:22px;color:#CDD5E6;font-size:15px}
+  .role li::before{content:"▹";position:absolute;left:0;color:var(--teal)}
+  .role li b{color:var(--text);font-weight:600}
+
+  /* CAMPAIGNS */
+  .grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .card{
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;
+    display:flex;flex-direction:column;gap:8px;transition:border-color .25s,transform .25s,background .25s;
+  }
+  .card:hover{transform:translateY(-3px);border-color:var(--teal);background:var(--surface-2)}
+  .card .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2)}
+  .card .stat{font-family:var(--mono);font-weight:700;font-size:27px;color:var(--gold);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+  .card .name{font-family:var(--display);font-weight:600;font-size:16px;margin-top:2px}
+  .card .desc{font-size:13.5px;color:var(--muted);line-height:1.55}
+
+  /* CAPABILITIES */
+  .cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .cap{background:var(--surface);border:1px solid var(--line-soft);border-radius:13px;padding:22px}
+  .cap h3{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:13px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:13px;color:#C7CFE0;background:rgba(255,255,255,.03);border:1px solid var(--line-soft);padding:6px 12px;border-radius:20px}
+
+  /* CONTACT */
+  .contact{text-align:center;padding:96px 0}
+  .contact h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,48px);letter-spacing:-.02em;line-height:1.08}
+  .contact h2 .hl{color:var(--gold)}
+  .contact p{color:var(--muted);font-size:17px;margin:18px auto 34px;max-width:34em}
+  .contact-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .clink{font-family:var(--mono);font-size:14px;padding:13px 22px;border:1px solid var(--line);border-radius:10px;transition:all .2s;display:inline-flex;align-items:center;gap:9px}
+  .clink:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+  .clink.primary{background:var(--teal);color:#06201D;border-color:var(--teal);font-weight:700}
+  .clink.primary:hover{background:#62ddd1;color:#06201D}
+
+  footer{border-top:1px solid var(--line-soft);padding:26px 0;text-align:center}
+  footer .f{font-family:var(--mono);font-size:12px;color:var(--muted-2);letter-spacing:.05em}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:880px){
+    .hero-inner{grid-template-columns:1fr;gap:38px}
+    .hero{padding:60px 0 40px}
+    .grid-cards{grid-template-columns:1fr 1fr}
+    .nav-links{display:none}
+  }
+  @media (max-width:560px){
+    .grid-cards{grid-template-columns:1fr}
+    .cap-grid{grid-template-columns:1fr}
+    .role-meta{text-align:left}
+    .sheet-row .v{font-size:21px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top">BALOGUN<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Experience</a>
+      <a href="#campaigns">Campaigns</a>
+      <a href="#capabilities">Capabilities</a>
+    </div>
+    <a class="nav-cta" href="#contact">Get in touch</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Web3 Community &amp; Growth</span>
+      <h1>I build trading communities from <span class="hl">zero</span> to tens of thousands.</h1>
+      <p class="lede">Four years running Discord communities for leading DeFi protocols. I own the room, resolve the queries, automate the busywork, and turn complex on chain mechanics into something a community actually understands.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Work with me &rarr;</a>
+        <a class="btn btn-ghost" href="#campaigns">See the campaigns</a>
+      </div>
+    </div>
+
+    <div class="sheet" aria-label="Career metrics summary">
+      <div class="sheet-head">
+        <span class="sheet-title">Track Record</span>
+        <span class="live"><span class="pulse"></span>On chain</span>
+      </div>
+      <div class="sheet-row"><span class="k">Discord built</span><span class="v" data-count="23000" data-suffix="+">0</span></div>
+      <div class="sheet-row"><span class="k">Community reach</span><span class="v" data-count="200000" data-suffix="+">0</span></div>
+      <div class="sheet-row"><span class="k">Volume driven</span><span class="v"><small>$</small><span data-count="289" data-suffix="M+">0</span></span></div>
+      <div class="sheet-row"><span class="k">On chain txns</span><span class="v"><span data-count="10.4" data-decimals="1" data-suffix="M+">0</span></span></div>
+      <div class="sheet-row"><span class="k">Campaigns led</span><span class="v" data-count="9" data-suffix="+">0</span></div>
+      <div class="sheet-foot">MONDAY TRADE · SYNFUTURES · 2022 to 2026</div>
+    </div>
+  </div>
+</header>
+
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Who I am</span>
+      <h2>Community is the product, and I treat it like one.</h2>
+    </div>
+    <p class="about-body reveal">
+      I am a Web3 community and support lead who has spent the last four years building, moderating, and scaling Discord communities across six DeFi protocols and blockchain projects. I grew one trading community from <strong>zero to 23,000+ members</strong> in six months, ran another through three protocol versions to <strong>200,000+ members</strong>, and shipped the campaigns, documentation, and automation that kept both healthy under live mainnet pressure.
+      My instinct is to find the pattern behind every recurring question and solve it once, through a clear FAQ or an automated flow, rather than answer it a hundred times. Backed by a First Class degree in Agricultural Economics, I bring real analytical discipline to engagement metrics, member feedback, and growth.
+    </p>
+  </div>
+</section>
+
+<section class="block" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Where I've worked</span>
+      <h2>Experience</h2>
+    </div>
+
+    <div class="role reveal">
+      <div class="role-top">
+        <div class="role-title">Community Lead, <span class="org">Monday Trade</span></div>
+        <div class="role-meta">JAN 2025 &middot; MAY 2026</div>
+      </div>
+      <div class="role-ctx">Perpetual futures DEX on Monad &middot; Remote</div>
+      <ul>
+        <li><b>Built a Discord community from zero to 23,000+ members</b> organically in six months, designing the full server structure, onboarding flows, and engagement programs from scratch.</li>
+        <li>Responded to daily member queries across Discord and X, resolving issues directly and escalating product feedback to keep the community supported through the Monad mainnet launch.</li>
+        <li>Owned 80%+ of the MoMo Ascend Program, a gamified role and points system <b>integrated with EngageBot</b> to automate daily engagement and rewards.</li>
+        <li>Translated perpetual trading, RWAs, liquidity pools, and referral mechanics into clear FAQs and announcements that cut repeat questions.</li>
+        <li><b>Drove growth to 6,800+ users, $289M+ cumulative volume, and 10.4M+ transactions</b> through community driven launch activations.</li>
+      </ul>
+    </div>
+
+    <div class="role reveal">
+      <div class="role-top">
+        <div class="role-title">Community Manager, <span class="org">SynFutures</span></div>
+        <div class="role-meta">SEP 2022 &middot; MAY 2026</div>
+      </div>
+      <div class="role-ctx">Leading perpetual DEX on Base &middot; 65%+ market share &middot; $343B+ platform volume &middot; Remote</div>
+      <ul>
+        <li><b>Helped grow the Discord community to 200,000+ members</b> across three protocol versions through consistent engagement and responsive support.</li>
+        <li>Ran daily moderation across Discord, Telegram, and X for a platform serving <b>433,000+ all time traders</b> and 351 trading pairs.</li>
+        <li>Built and maintained FAQs and self serve resources that let members resolve common issues without escalation.</li>
+        <li>Produced AI assisted graphics, short form video, and newsletters that held a consistent brand voice across every touchpoint.</li>
+        <li>Partnered with the Business Development team to source and forge strategic partnerships with other DeFi projects, and supported recruitment by surfacing community talent for open roles.</li>
+        <li>Contributed to the F Token launch and Season 1 airdrop of <b>750,000,000 tokens</b>, now listed on multiple major exchanges.</li>
+      </ul>
+    </div>
+
+    <div class="reveal" style="margin-top:30px">
+      <div class="role-ctx" style="font-family:var(--mono);text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--muted-2);margin-bottom:14px">Earlier roles &middot; 2021 to 2024</div>
+      <div class="grid-cards">
+        <div class="card">
+          <span class="tag">Mar 2022 to Jun 2024</span>
+          <span class="name">Community Manager</span>
+          <span class="desc" style="color:var(--gold);font-family:var(--mono);font-size:13px">Enrex</span>
+          <span class="desc">Ran moderation and growth initiatives, coordinating campaigns and tracking engagement metrics.</span>
+        </div>
+        <div class="card">
+          <span class="tag">Jan 2022 to Jan 2023</span>
+          <span class="name">Community Manager</span>
+          <span class="desc" style="color:var(--gold);font-family:var(--mono);font-size:13px">Project Larix</span>
+          <span class="desc">Resolved product and technical questions and flagged community health trends to the team.</span>
+        </div>
+        <div class="card">
+          <span class="tag">Jun 2022 to Nov 2022</span>
+          <span class="name">Head Moderator</span>
+          <span class="desc" style="color:var(--gold);font-family:var(--mono);font-size:13px">Paddy's Odyssey</span>
+          <span class="desc">Oversaw the moderator team, scheduling, and consistent enforcement of community standards.</span>
+        </div>
+        <div class="card">
+          <span class="tag">Dec 2021 to Jan 2022</span>
+          <span class="name">Community Manager</span>
+          <span class="desc" style="color:var(--gold);font-family:var(--mono);font-size:13px">Woof Solana</span>
+          <span class="desc">Drove early community growth, helping users navigate the Solana based ecosystem.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="campaigns">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Selected work</span>
+      <h2>Campaigns I planned and ran</h2>
+      <p>Flagship programs across two protocols, from ambassador networks to multimillion token reward pools.</p>
+    </div>
+    <div class="grid-cards">
+      <div class="card reveal">
+        <span class="tag">Monday Trade</span>
+        <span class="stat">5,000 USDC</span>
+        <span class="name">Monday Mavericks</span>
+        <span class="desc">Ambassador program with 17 vetted creators and a monthly reward pool, run with Kaito Studio.</span>
+      </div>
+      <div class="card reveal">
+        <span class="tag">Monday Trade</span>
+        <span class="stat">50,000 MON</span>
+        <span class="name">Moonshot Challenge</span>
+        <span class="desc">Community trading competition built to drive activity and onboarding around mainnet.</span>
+      </div>
+      <div class="card reveal">
+        <span class="tag">Monday Trade</span>
+        <span class="stat">2,000,000</span>
+        <span class="name">Voyage Points Program</span>
+        <span class="desc">Weekly points distribution rewarding sustained engagement and progression.</span>
+      </div>
+      <div class="card reveal">
+        <span class="tag">SynFutures</span>
+        <span class="stat">17 weeks</span>
+        <span class="name">Trail of Champions</span>
+        <span class="desc">Recurring USDC rewarded engagement series sustaining a 200,000+ member base.</span>
+      </div>
+      <div class="card reveal">
+        <span class="tag">SynFutures</span>
+        <span class="stat">$2,025</span>
+        <span class="name">EPL Fantasy League</span>
+        <span class="desc">USDC prize pool fantasy competition spanning a full 17 game week season.</span>
+      </div>
+      <div class="card reveal">
+        <span class="tag">SynFutures</span>
+        <span class="stat">750M</span>
+        <span class="name">F Token Launch</span>
+        <span class="desc">Season 1 community airdrop of 7.5% of total supply, now on major exchanges.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="capabilities">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What I bring</span>
+      <h2>Capabilities</h2>
+    </div>
+    <div class="cap-grid">
+      <div class="cap reveal">
+        <h3>Community &amp; Support</h3>
+        <div class="chips">
+          <span class="chip">Discord management</span><span class="chip">Telegram &amp; X moderation</span><span class="chip">Query resolution &amp; escalation</span><span class="chip">FAQ &amp; documentation</span><span class="chip">AMA hosting</span><span class="chip">Crisis management</span>
+        </div>
+      </div>
+      <div class="cap reveal">
+        <h3>Process &amp; Automation</h3>
+        <div class="chips">
+          <span class="chip">EngageBot automation</span><span class="chip">AI assisted tooling</span><span class="chip">Onboarding flows</span><span class="chip">Playbooks</span><span class="chip">Workflow improvement</span><span class="chip">BD &amp; partnerships</span><span class="chip">Talent sourcing</span>
+        </div>
+      </div>
+      <div class="cap reveal">
+        <h3>Web3 &amp; DeFi</h3>
+        <div class="chips">
+          <span class="chip">Perpetual futures</span><span class="chip">Token launches</span><span class="chip">Airdrops</span><span class="chip">Referral programs</span><span class="chip">Kaito Studio</span><span class="chip">Galxe</span><span class="chip">Farcaster</span>
+        </div>
+      </div>
+      <div class="cap reveal">
+        <h3>Analytics &amp; Reporting</h3>
+        <div class="chips">
+          <span class="chip">Engagement metrics</span><span class="chip">Data interpretation</span><span class="chip">Survey design</span><span class="chip">Excel (advanced)</span><span class="chip">SPSS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow reveal" style="justify-content:center;display:flex">Open to opportunities</span>
+    <h2 class="reveal">Let's build a community<br>worth <span class="hl">showing up</span> for.</h2>
+    <p class="reveal">Hiring for community, support, or growth in Web3? I work on West Africa Time (UTC+1), 8 to 10 hours daily, 6 days a week, and overlap cleanly with EU and most global hours. Available for full time roles.</p>
+    <div class="contact-links reveal">
+      <a class="clink primary" href="mailto:balogunabdulbasit@gmail.com">Email me</a>
+      <a class="clink" href="https://linkedin.com/in/drswagoon" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+      <a class="clink" href="https://x.com/drswagoon" target="_blank" rel="noopener">X / Twitter &#8599;</a>
+    </div>
+    <p class="reveal" style="font-family:var(--mono);font-size:13px;color:var(--muted-2);letter-spacing:.04em;margin:22px auto 0">Discord: drsynwagoon</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span class="f">ABDULBASIT BALOGUN &middot; WEB3 COMMUNITY LEAD &middot; IELTS 8.0 (C1)</span></div>
+</footer>
+
+<script>
+  // Count-up for the position sheet
+  function animateCount(el){
+    var target=parseFloat(el.dataset.count);
+    var decimals=parseInt(el.dataset.decimals||"0",10);
+    var suffix=el.dataset.suffix||"";
+    var dur=1400, start=performance.now();
+    function fmt(n){
+      if(decimals>0) return n.toFixed(decimals);
+      return Math.round(n).toLocaleString('en-US');
+    }
+    function tick(now){
+      var p=Math.min((now-start)/dur,1);
+      var eased=1-Math.pow(1-p,3);
+      el.textContent=fmt(target*eased)+(p===1?suffix:"");
+      if(p<1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var counters=document.querySelectorAll('[data-count]');
+  if(reduce){
+    counters.forEach(function(el){
+      var d=parseInt(el.dataset.decimals||"0",10);
+      var t=parseFloat(el.dataset.count);
+      el.textContent=(d>0?t.toFixed(d):Math.round(t).toLocaleString('en-US'))+(el.dataset.suffix||"");
+    });
+  } else {
+    window.addEventListener('load',function(){
+      setTimeout(function(){counters.forEach(animateCount);},250);
+    });
+  }
+
+  // Scroll reveals
+  if(!reduce && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.14});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
+</script>
+</body>
+</html>
